@@ -1,0 +1,32 @@
+{
+  "name": "orion-redtail-project",
+  "version": "1.0.0",
+  "description": "## Overview This repository contains documentation and project planning materials for implementing the integration between Orion Advisor and Redtail CRM systems. The project focuses on establishing a bi-directional sync between existing Orion and Redtail data while maintaining data integrity and avoiding duplicates.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "linear": "npm run build && node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbkilla/orion-redtail-integration.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zbkilla/orion-redtail-integration/issues"
+  },
+  "homepage": "https://github.com/zbkilla/orion-redtail-integration#readme",
+  "dependencies": {
+    "@linear/sdk": "^56.0.0",
+    "@types/node": "^24.3.0",
+    "dotenv": "^17.2.1",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}

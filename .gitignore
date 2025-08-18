@@ -48,3 +48,6 @@ temp/
 *.cert
 credentials.json
 secrets.yaml
+
+# Linear SDK
+.env
