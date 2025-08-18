@@ -1,5 +1,6 @@
 import { LinearIntegration } from './linear-client';
 import { OrionRedtailProjectTracker } from './project-tracker';
+import { OrionRedtailProjectEnhancer } from './project-enhancer';
 
 async function main() {
   const action = process.argv[2];
@@ -23,6 +24,9 @@ async function main() {
         break;
       case 'create-blockers':
         await createBlockers();
+        break;
+      case 'enhance-project':
+        await enhanceProject();
         break;
       default:
         showHelp();
@@ -63,6 +67,11 @@ async function createBlockers() {
   await tracker.createCriticalQuestions();
 }
 
+async function enhanceProject() {
+  const enhancer = new OrionRedtailProjectEnhancer();
+  await enhancer.enhanceFullProject();
+}
+
 function showHelp() {
   console.log(`
 Orion-Redtail Linear Integration
@@ -76,6 +85,7 @@ Commands:
   projects       List available projects
   setup-project  Create full project structure in Linear
   create-blockers Create critical blocker issues
+  enhance-project Add milestones, updates, and advanced features
 
 Setup:
 1. Get your Linear API key from: https://linear.app/settings/api
