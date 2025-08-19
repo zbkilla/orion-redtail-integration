@@ -1,6 +1,7 @@
 import { LinearIntegration } from './linear-client';
 import { OrionRedtailProjectTracker } from './project-tracker';
 import { OrionRedtailProjectEnhancer } from './project-enhancer';
+import { LinearWorkspaceOptimizer } from './linear-workspace-optimizer';
 
 async function main() {
   const action = process.argv[2];
@@ -27,6 +28,9 @@ async function main() {
         break;
       case 'enhance-project':
         await enhanceProject();
+        break;
+      case 'optimize-workspace':
+        await optimizeWorkspace();
         break;
       default:
         showHelp();
@@ -72,6 +76,11 @@ async function enhanceProject() {
   await enhancer.enhanceFullProject();
 }
 
+async function optimizeWorkspace() {
+  const optimizer = new LinearWorkspaceOptimizer();
+  await optimizer.optimizeWorkspace();
+}
+
 function showHelp() {
   console.log(`
 Orion-Redtail Linear Integration
@@ -86,6 +95,7 @@ Commands:
   setup-project  Create full project structure in Linear
   create-blockers Create critical blocker issues
   enhance-project Add milestones, updates, and advanced features
+  optimize-workspace RECOMMENDED: Create optimized workspace following 2024-2025 best practices
 
 Setup:
 1. Get your Linear API key from: https://linear.app/settings/api

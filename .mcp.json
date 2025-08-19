@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.linear.app/sse"],
+      "description": "Linear MCP server for project management integration",
+      "scope": "project"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/zbk/Development/orion-redtail-project"],
+      "description": "Filesystem MCP server for enhanced file operations",
+      "scope": "project"
+    }
+  }
+}

@@ -7,7 +7,14 @@
     "build": "tsc",
     "linear": "npm run build && node dist/index.js",
     "dev": "ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "crawl": "npx ts-node src/crawlers/linear-docs-crawler-v2.ts",
+    "crawl:dev": "NODE_ENV=development npx ts-node src/crawlers/linear-docs-crawler-v2.ts",
+    "crawl:cache": "npx ts-node src/crawlers/linear-docs-crawler-v2.ts --cache",
+    "crawl:help": "npx ts-node src/crawlers/linear-docs-crawler-v2.ts --help",
+    "discover": "npx ts-node src/crawlers/linear-docs-discovery.ts",
+    "crawl:all": "npx ts-node src/crawlers/crawl-discovered.ts",
+    "crawl:all:cache": "npx ts-node src/crawlers/crawl-discovered.ts --cache"
   },
   "repository": {
     "type": "git",
@@ -27,6 +34,12 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.3",
+    "@types/jsdom": "^21.1.7",
+    "@types/node-fetch": "^2.6.13",
+    "jsdom": "^26.1.0",
+    "mcp-remote": "^0.1.18",
+    "node-fetch": "^3.3.2",
     "ts-node": "^10.9.2"
   }
 }
